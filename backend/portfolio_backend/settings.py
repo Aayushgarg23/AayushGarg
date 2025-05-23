@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-35ud211m*oi5xno16dmeyuvvzc%rz0&jof0(%)8#f7v#@4gj-k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'portfolio-1-4j5a.onrender.com']
 
 
 # Application definition
@@ -132,9 +132,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Add media files to allowed hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -144,6 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",  # Django development server
     "http://127.0.0.1:8000",  # Alternative Django development server
+    "https://portfolio-1-4j5a.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
