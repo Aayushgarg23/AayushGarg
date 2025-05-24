@@ -1,4 +1,5 @@
 from django.contrib import admin
+from adminsortable2.admin import SortableAdminMixin
 from .models import (
     About, Education, Background, Service, SkillCategory, Skill, Project, ProjectFeature, ProjectStat, ProjectTag,
     Experience, ExperienceDetail, ExperienceSkill, Resume, Blog, BlogAuthor, BlogTag, ContactMessage, SocialMedia, Testimonial,
@@ -40,9 +41,11 @@ class ProjectTagInline(admin.TabularInline):
     extra = 1
 
 @admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(SortableAdminMixin, admin.ModelAdmin):
     inlines = [ProjectFeatureInline, ProjectTagInline]
-    list_display = ("title",)
+    list_display = ("title", "order")
+    list_editable = ("order",)
+    ordering = ("order",)
 
 @admin.register(ProjectStat)
 class ProjectStatAdmin(admin.ModelAdmin):
@@ -57,9 +60,11 @@ class ExperienceSkillInline(admin.TabularInline):
     extra = 1
 
 @admin.register(Experience)
-class ExperienceAdmin(admin.ModelAdmin):
+class ExperienceAdmin(SortableAdminMixin, admin.ModelAdmin):
     inlines = [ExperienceDetailInline, ExperienceSkillInline]
-    list_display = ("role", "company", "type", "duration")
+    list_display = ("role", "company", "type", "order")
+    list_editable = ("order",)
+    ordering = ("order",)
 
 @admin.register(Resume)
 class ResumeAdmin(admin.ModelAdmin):
@@ -70,9 +75,11 @@ class BlogTagInline(admin.TabularInline):
     extra = 1
 
 @admin.register(Blog)
-class BlogAdmin(admin.ModelAdmin):
+class BlogAdmin(SortableAdminMixin, admin.ModelAdmin):
     inlines = [BlogTagInline]
-    list_display = ("title", "published_date", "category", "author")
+    list_display = ("title", "author", "published_date", "order")
+    list_editable = ("order",)
+    ordering = ("order",)
     list_filter = ("category", "published_date", "author")
     search_fields = ("title", "content", "excerpt")
     date_hierarchy = "published_date"

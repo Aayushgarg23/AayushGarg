@@ -49,8 +49,7 @@ class SkillCategory(models.Model):
 class Skill(models.Model):
     category = models.ForeignKey(SkillCategory, related_name='skills', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    level = models.PositiveIntegerField(help_text='Skill level as percentage or stars')
-    color = models.CharField(max_length=20, blank=True)
+    icon = models.CharField(max_length=50, help_text='Icon class name (e.g., "fab fa-react")', blank=True)
     description = models.TextField(blank=True)
 
     def __str__(self):
@@ -63,6 +62,10 @@ class Project(models.Model):
     image = models.ImageField(upload_to='projects/')
     github = models.URLField(blank=True)
     demo = models.URLField(blank=True)
+    order = models.PositiveIntegerField(default=0, db_index=True)
+
+    class Meta:
+        ordering = ['order', 'id']
 
     def __str__(self):
         return self.title
@@ -103,6 +106,10 @@ class Experience(models.Model):
     duration = models.CharField(max_length=100)
     description = models.TextField()
     icon = models.ImageField(upload_to='experience_icons/', blank=True)
+    order = models.PositiveIntegerField(default=0, db_index=True)
+
+    class Meta:
+        ordering = ['order', 'id']
 
     def __str__(self):
         return f"{self.role} at {self.company}"
@@ -140,6 +147,10 @@ class Blog(models.Model):
     url = models.URLField(blank=True)
     category = models.CharField(max_length=100)
     author = models.ForeignKey('BlogAuthor', related_name='blogs', on_delete=models.SET_NULL, null=True, blank=True)
+    order = models.PositiveIntegerField(default=0, db_index=True)
+
+    class Meta:
+        ordering = ['order', '-published_date']
 
     def __str__(self):
         return self.title

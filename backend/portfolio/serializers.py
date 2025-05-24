@@ -32,7 +32,7 @@ class ServiceSerializer(serializers.ModelSerializer):
 class SkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = Skill
-        fields = ['id', 'name', 'level', 'color', 'description']
+        fields = ['id', 'name', 'icon', 'description']
 
 class SkillCategorySerializer(serializers.ModelSerializer):
     skills = SkillSerializer(many=True, read_only=True)

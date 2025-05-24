@@ -1,12 +1,12 @@
 # Django and REST framework
-Django==5.2.1
-djangorestframework==3.14.0
+Django>=5.0.0
+djangorestframework>=3.14.0
 
 # CORS handling
-django-cors-headers==4.3.1
+django-cors-headers>=4.3.1
 
 # Static file serving
-whitenoise==6.6.0
+whitenoise>=6.6.0
 
 # Database
 # SQLite is included with Python, but if you need PostgreSQL later:
@@ -22,7 +22,7 @@ gunicorn==21.2.0
 django-environ==0.11.2
 
 # Image processing (if you're handling image uploads)
-Pillow==10.2.0
+Pillow>=10.1.0
 
 # API documentation
 drf-yasg==1.21.7
@@ -34,4 +34,7 @@ pytest-django==4.8.0
 # Code quality
 black==24.1.1
 flake8==7.0.0
-isort==5.13.2 
+isort==5.13.2
+
+# Additional requirements
+django-admin-sortable2>=2.1.13 

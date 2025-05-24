@@ -15,6 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -24,7 +25,8 @@ SECRET_KEY = 'django-insecure-35ud211m*oi5xno16dmeyuvvzc%rz0&jof0(%)8#f7v#@4gj-k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'aayush-garg.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 
 # Application definition
 
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'adminsortable2',
     'portfolio',
     'rest_framework',
     'corsheaders',
@@ -130,6 +133,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+# Add media files to allowed hosts
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -137,10 +143,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Vite development server
+    "http://127.0.0.1:5173",  # Alternative Vite development server
     "http://localhost:8000",  # Django development server
     "http://127.0.0.1:8000",  # Alternative Django development server
-    "https://aayush-garg.onrender.com",
-    #"https://aayush-garg.onrender.com"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
