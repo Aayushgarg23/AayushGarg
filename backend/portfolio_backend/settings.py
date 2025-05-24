@@ -146,7 +146,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite development server
     "http://127.0.0.1:5173",  # Alternative Vite development server
     "http://localhost:8000",  # Django development server
-    "http://127.0.0.1:8000",  # Alternative Django development server
+    "http://127.0.0.1:8000"
+    "https://aayush-garg.onrender.com",  # Alternative Django development server
 ]
 
 CORS_ALLOW_CREDENTIALS = True
