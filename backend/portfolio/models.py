@@ -201,6 +201,7 @@ class SocialMedia(models.Model):
     def __str__(self):
         return f"{self.get_platform_display()} - {self.url}"
 
+#testimonial data 
 class Testimonial(models.Model):
     client_name = models.CharField(max_length=100)
     client_position = models.CharField(max_length=100)
