@@ -134,7 +134,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Add media files to allowed hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','aayush-garg.onrender.com', https://aayush-garg.netlify.app/]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','aayush-garg.onrender.com', 'aayush-garg.netlify.app']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
