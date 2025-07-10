@@ -134,7 +134,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Add media files to allowed hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','aayush-garg.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','aayush-garg.onrender.com', https://aayush-garg.netlify.app/]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -147,7 +147,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",  # Alternative Vite development server
     "http://localhost:8000",  # Django development server
     "http://127.0.0.1:8000",
-    "https://aayush-garg.onrender.com",  # Alternative Django development server
+    "https://aayush-garg.onrender.com", 
+    "https://aayush-garg.netlify.app/"
+    # Alternative Django development server
 ]
 
 CORS_ALLOW_CREDENTIALS = True
