@@ -159,7 +159,7 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 # Optional: Allow all headers and methods
-CORS_ALLOW_ALL_ORIGINS = False  # Set to True only in development
+CORS_ALLOW_ALL_ORIGINS = True  # Set to True only in development
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
